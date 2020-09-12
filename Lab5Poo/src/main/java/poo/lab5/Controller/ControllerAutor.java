@@ -10,7 +10,7 @@ public class ControllerAutor {
 
     // Métodos
     // accesors de lista autores
-    public static TreeSet<Autor> getListaAutores() {
+    public TreeSet<Autor> getListaAutores() {
         return ControllerAutor.listaAutores;
     }
 

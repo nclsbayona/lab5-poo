@@ -46,6 +46,7 @@ public class Autor implements Comparable<Autor>
     //Constructor
     public Autor(String _nombre, int _cedula)
     {
+        this.librosEscritos=null;
         this.nombre=_nombre;
         this.cedula=_cedula;
     }
@@ -78,6 +79,15 @@ public class Autor implements Comparable<Autor>
     }
     @Override
     public String toString(){
-        return this.nombre+':'+this.cedula+'-'+this.estado;
+        String retorno= this.nombre+':'+this.cedula+'-'+this.estado+"\nLibros\n";
+        if (this.librosEscritos!=null)
+        {
+            for (Libro libro : this.librosEscritos)
+            {
+                retorno+=libro.toString();
+            }
+        }
+        return retorno;
+        
     }
 }

@@ -10,9 +10,11 @@ public class PantallaGaleria
         PantallaGaleria Galeria = new PantallaGaleria();
         Autor autores[] = new Autor[3];
         autores[0]=new Autor("Nicolas Bayona", 1000000);
+        autores[1]=new Autor("Sebastian Herrera", 1000000);
         Libro libro1 = new Libro("Doña barbara", "4EFG", 25000);
         autores[0].setEstado("ACTIVO");
         Galeria.controlAutor.agregarAutor(autores[0]);
+        Galeria.controlAutor.agregarAutor(autores[1]);
         Galeria.controlLibro.agregarLibro(libro1);
         Galeria.controlAutor.agregarLibroAAutor(libro1, autores[0]);
         for (Autor autor : Galeria.controlAutor.getListaAutores())
