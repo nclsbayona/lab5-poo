@@ -33,7 +33,7 @@ public class ControllerLibro {
 
     }
     // Multi-autores a libro
-    public void agregarAutores(Libro lib, Autor... autores) {
+    public static void agregarAutores(Libro lib, Autor... autores) {
         for (Autor autor : autores) {
             ControllerLibro.agregarAutoraListBook(lib, autor);
             autor.agregarLibroEscrito(lib);
