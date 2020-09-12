@@ -42,6 +42,7 @@ public class PantallaGaleria {
         ControllerAutor.agregarLibroAAutor(libros[1], autores[0]);
         ControllerLibro.asignarAutorALibro(libros[2], autores[1]);
         ControllerLibro.asignarAutorALibro(libros[6], autores[0]);
+        ControllerLibro.asignarAutorALibro(libros[0],autores[1]);
         ControllerLibro.asignarAutorALibro(libros[6], new Autor("AtonCode", 1122334));
         System.out.print("Buscando \"4RSG\"" + '\n' + "Este se llama: ");
         Libro aux = ControllerLibro.buscarLibro(libros[1].getIsbn());
@@ -50,7 +51,7 @@ public class PantallaGaleria {
         for (Autor autor : ControllerAutor.getListaAutores()) {
             System.out.println("Autor: "+autor+"Total de costo de sus libros: "+ControllerAutor.calcularCostoTotalLibros(autor.getCedula())); System.out.println(); 
             for (Libro lib :autor.getLibrosEscritos()) {
-                System.out.println("Libro: "+lib.getNombre()+':'+lib.getAutor().getNombre());
+                System.out.println("Libro: "+lib.getNombre()+':'+lib.getAutores());
             } 
             System.out.println();
         }

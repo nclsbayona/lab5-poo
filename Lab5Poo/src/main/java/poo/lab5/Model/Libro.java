@@ -65,10 +65,10 @@ public class Libro implements Comparable<Libro> {
     // Constructor
     public Libro(Autor _autor, String _nombrelibro, String _isbn, int _costo) {
         this.autores=new TreeSet<Autor>();
-        this.autores.add(autor);
+        this.autores.add(_autor);
          
-        if (!this.autor.getLibrosEscritos().contains(this)) {
-            this.autor.agregarLibroEscrito(this);
+        if (!_autor.getLibrosEscritos().contains(this)) {
+            _autor.agregarLibroEscrito(this);
         }
         this.nombre = _nombrelibro;
         this.isbn = _isbn;
