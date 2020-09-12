@@ -55,7 +55,6 @@ public class ControllerLibro {
      * void asignarAutorAlLibro(Libro lib, Autor aut) {}
      */
     public static Libro buscarLibro(String isbn) {
-     // System.out.println(ControllerLibro.libros.size());
         for (Libro libro : ControllerLibro.libros) {
             if (libro.getIsbn().equals(isbn)) {
                 return libro;
