@@ -14,7 +14,7 @@ public class PantallaGaleria
         autores[0].setEstado("ACTIVO");
         Galeria.controlAutor.agregarAutor(autores[0]);
         Galeria.controlAutor.agregarAutor(autores[1]);
-        Galeria.controlLibro.agregarLibro(libro1);
+        ControllerLibro.agregarLibro(libro1);
         Galeria.controlAutor.agregarLibroAAutor(libro1, autores[0]);
         for (Autor autor : ControllerAutor.getListaAutores())
         {

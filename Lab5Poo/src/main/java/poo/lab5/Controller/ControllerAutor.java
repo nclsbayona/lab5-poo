@@ -19,7 +19,7 @@ public class ControllerAutor {
     }
 
     // Agregar Autor
-    public void agregarAutor(Autor aut) {
+    public static void agregarAutor(Autor aut) {
         for (Autor autor_ : ControllerAutor.getListaAutores()) {
             if (autor_.getCedula() == aut.getCedula()) {
                 return;
@@ -30,7 +30,7 @@ public class ControllerAutor {
     }
 
     // Agregar libro a autor
-    public void agregarLibroAAutor(Libro lib, Autor aut) {
+    public static void agregarLibroAAutor(Libro lib, Autor aut) {
         for (Autor autor_ : ControllerAutor.getListaAutores()) {
             if (autor_ == aut) {
                 for (Libro libro_ : autor_.getLibrosEscritos()) {
@@ -54,7 +54,7 @@ public class ControllerAutor {
      * calcularCostoTotalLibros(int p_cedula) Calcular el costo total de los libros
      * del autor cuya cédula llega como parámetro.
      */
-    public int calcularCostoTotalLibros(int p_cedula) {
+    public static int calcularCostoTotalLibros(int p_cedula) {
         int total = 0;
         for (Autor autor : ControllerAutor.listaAutores) {
             if (autor.getCedula() == p_cedula) {

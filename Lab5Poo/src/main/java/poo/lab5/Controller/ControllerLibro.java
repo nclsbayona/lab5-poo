@@ -23,7 +23,7 @@ public class ControllerLibro {
     }
 
     // Agregar Libro
-    public void agregarLibro(Libro lib) {
+    public static void agregarLibro(Libro lib) {
         for (Libro libro_ : ControllerLibro.getLibros()) {
             if (lib.getIsbn() == libro_.getIsbn()) {
                 return;
