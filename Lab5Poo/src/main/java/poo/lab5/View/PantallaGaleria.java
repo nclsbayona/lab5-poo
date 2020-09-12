@@ -1,5 +1,6 @@
-package lab5.poo.View;
-import lab5.poo.Control;
-public class PantallaGaleria {
+package poo.lab5.View;
+import poo.lab5.Control.*;
+public class PantallaGaleria 
+{
     
 }
