@@ -36,9 +36,13 @@ public class PantallaGaleria {
         ControllerAutor.agregarLibroAAutor(libros[0], autores[0]);
         ControllerAutor.agregarLibroAAutor(new Libro("Bananas en pijama", "2AVC", 10000), autores[0]);
         ControllerLibro.agregarLibro(libros[6]);
+        ControllerLibro.agregarLibro(libros[6], autores[0]);
+        ControllerLibro.agregarLibro(libros[6], new Autor("AtonCode", 1122334));
         ControllerLibro.agregarLibro(libros[4]);
         ControllerAutor.agregarLibroAAutor(libros[1], autores[0]);
         ControllerLibro.asignarAutorALibro(libros[2], autores[1]);
+        ControllerLibro.asignarAutorALibro(libros[6], autores[0]);
+        ControllerLibro.asignarAutorALibro(libros[6], new Autor("AtonCode", 1122334));
         System.out.print("Buscando \"4RSG\"" + '\n' + "Este se llama: ");
         Libro aux = ControllerLibro.buscarLibro(libros[1].getIsbn());
         System.out.println(aux.getNombre());

@@ -52,16 +52,29 @@ public class Autor implements Comparable<Autor> {
         this.cedula = _cedula;
     }
 
+    // Buscar libro por isbn
+    public boolean buscarLibro(String isbn) {
+        for (Libro libro : this.librosEscritos) {
+            if (libro.getIsbn().equals(isbn)) {
+                return false;
+            }
+        }
+        return true;
+    }
+
     // Agregar libro escrito
     public void agregarLibroEscrito(Libro libro) {
         try {
+            boolean _libro = this.buscarLibro(libro.getIsbn());
+            if (!_libro) {
+                return;
+            }
             // System.out.println("Tam 1:"+this.librosEscritos.size());
             if (this.getEstado().equals("ACTIVO")) {
                 this.librosEscritos.add(libro);
                 libro.setAutor(this);
             }
-        } 
-        catch (Exception e) {
+        } catch (Exception e) {
             return;
         }
     }
@@ -90,10 +103,8 @@ public class Autor implements Comparable<Autor> {
         if (this.librosEscritos != null) {
             for (Libro libro : this.librosEscritos) {
                 retorno += ('\t' + libro.toString() + '\n');
-          
             }
         }
         return retorno;
-
     }
 }
