@@ -26,6 +26,7 @@ public class PantallaGaleria {
         ControllerAutor.agregarAutor(autores[0]);
         autores[0].setEstado("ACTIVO");
         autores[1].setEstado("ACTIVO");
+        ControllerLibro.agregarAutores(libros[4], autores[0], autores[1]);
         ControllerAutor.agregarAutor(autores[1]);
         ControllerLibro.agregarLibro(libros[0]);
         ControllerLibro.agregarLibro(libros[5]);
