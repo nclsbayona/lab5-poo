@@ -1,19 +1,20 @@
 package poo.lab5.Model;
-
+import java.util.TreeSet;
 public class Libro implements Comparable<Libro> {
-    private Autor autor;
+    private TreeSet<Autor> autores;
     private String nombre;
     private String isbn;
     private int costo;
 
+    //
     // Métodos
     // Accessors de autor
-    public Autor getAutor() {
-        return this.autor;
+    public TreeSet<Autor> getAutores() {
+        return this.autores;
     }
 
-    public void setAutor(Autor _autor) {
-        this.autor = _autor;
+    public void setAutores(TreeSet<Autor> _autor) {
+        this.autores = _autor;
     }
 
     // Accessors de costo
@@ -63,7 +64,9 @@ public class Libro implements Comparable<Libro> {
 
     // Constructor
     public Libro(Autor _autor, String _nombrelibro, String _isbn, int _costo) {
-        this.autor = _autor;
+        this.autores=new TreeSet<Autor>();
+        this.autores.add(autor);
+         
         if (!this.autor.getLibrosEscritos().contains(this)) {
             this.autor.agregarLibroEscrito(this);
         }
@@ -73,12 +76,12 @@ public class Libro implements Comparable<Libro> {
     }
 
     public Libro(String _nombrelibro, String _isbn, int _costo) {
+        this.autores=new TreeSet<Autor>();
         this.nombre = _nombrelibro;
         this.isbn = _isbn;
         this.costo = _costo;
     }
 
-    @Override
     public String toString() {
         String retorno=this.nombre + '-' + this.isbn + '-' + this.costo;
         //System.out.println("Retorno "+ retorno);

@@ -72,7 +72,8 @@ public class Autor implements Comparable<Autor> {
             // System.out.println("Tam 1:"+this.librosEscritos.size());
             if (this.getEstado().equals("ACTIVO")) {
                 this.librosEscritos.add(libro);
-                libro.setAutor(this);
+                libro.getAutores().add(this);
+                
             }
         } catch (Exception e) {
             return;
@@ -96,8 +97,6 @@ public class Autor implements Comparable<Autor> {
             return 1;
         }
     }
-
-    @Override
     public String toString() {
         String retorno = this.nombre + ':' + this.cedula + '-' + this.estado + "\nLibros\n";
         if (this.librosEscritos != null) {
