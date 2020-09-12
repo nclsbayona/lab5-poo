@@ -33,7 +33,10 @@ public class ControllerLibro {
     public static boolean agregarLibro(Libro lib, Autor aut) {
         boolean retorno = false;
         Libro libro=ControllerLibro.buscarLibro(lib.getIsbn());
-        if ((libro!=null)&&(ControllerAutor.buscarAutor(aut.getCedula()) != null))
+        if (ControllerLibro.buscarLibro(lib.getIsbn())!=null){
+            return retorno;
+        }
+        if ((libro==null)&&(ControllerAutor.buscarAutor(aut.getCedula()) != null))
         {
             ControllerLibro.getLibros().add(lib);
             ControllerAutor.getListaAutores().add(aut);
