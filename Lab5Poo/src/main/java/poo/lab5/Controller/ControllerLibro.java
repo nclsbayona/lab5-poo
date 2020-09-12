@@ -5,7 +5,7 @@ import poo.lab5.Model.Autor;
 import java.util.TreeSet;
 
 public class ControllerLibro {
-    private static TreeSet<Libro> libros=new TreeSet<Libro>();
+    private static TreeSet<Libro> libros = new TreeSet<Libro>();
 
     // Métodos
     // Constructor
@@ -20,11 +20,8 @@ public class ControllerLibro {
 
     // Agregar Libro
     public static void agregarLibro(Libro lib) {
-        for (Libro libro_ : ControllerLibro.getLibros()) {
-            if (lib.getIsbn() == libro_.getIsbn()) {
-                return;
-            }
-            libros.add(lib);
+        if (ControllerLibro.buscarLibro(lib.getIsbn()) == null) {
+            ControllerLibro.libros.add(lib);
         }
     }
 
@@ -34,14 +31,18 @@ public class ControllerLibro {
      * de autores
      */
     public boolean agregarLibro(Libro lib, Autor aut) {
-        if ((ControllerLibro.buscarLibro(lib.getIsbn()) != null)
+        boolean retorno = false;
+        if ((ControllerLibro.buscarLibro(lib.getIsbn()) == null)
                 && (ControllerAutor.buscarAutor(aut.getCedula()) != null)) {
             ControllerLibro.getLibros().add(lib);
             ControllerAutor.getListaAutores().add(aut);
-            return true;
+            retorno = true;
+            // System.out.println(retorno);
+            return retorno;
         }
-        return false;
+        return retorno;
     }
+
     /*
      * asignarAutorALibro(Libro lib, Autor a): Asigna a un libro que debería existir
      * a un autor que debe existir El autor debe existir en la lista de autores No
@@ -49,6 +50,7 @@ public class ControllerLibro {
      * void asignarAutorAlLibro(Libro lib, Autor aut) {}
      */
     public static Libro buscarLibro(String isbn) {
+     // System.out.println(ControllerLibro.libros.size());
         for (Libro libro : ControllerLibro.libros) {
             if (libro.getIsbn().equals(isbn)) {
                 return libro;
