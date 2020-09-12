@@ -10,7 +10,7 @@ public class ControllerAutor {
 
     // Métodos
     // accesors de lista autores
-    public TreeSet<Autor> getListaAutores() {
+    public static TreeSet<Autor> getListaAutores() {
         return ControllerAutor.listaAutores;
     }
 
@@ -38,13 +38,13 @@ public class ControllerAutor {
                     if (libro_.getIsbn().equals(lib.getIsbn())) {
                         return;
                     }
-                }
-                if (ControllerLibro.getLibros().contains(lib)) {
-                    if (lib.getAutor() != aut) {
-                        lib.setAutor(aut);
+                    if (ControllerLibro.getLibros().contains(lib)) {
+                        if (lib.getAutor() != aut) {
+                            lib.setAutor(aut);
+                        }
+                        aut.agregarLibroEscrito(lib);
+                        return;
                     }
-                    aut.agregarLibroEscrito(lib);
-                    return;
                 }
             }
         }

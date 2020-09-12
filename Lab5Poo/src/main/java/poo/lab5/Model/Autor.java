@@ -53,6 +53,10 @@ public class Autor implements Comparable<Autor>
     //Agregar libro escrito
     public void agregarLibroEscrito(Libro libro)
     {
+    	if (this.librosEscritos==null)
+    	{
+    		this.librosEscritos=new TreeSet<Libro>();   	
+    	}
         this.librosEscritos.add(libro);
     }
     //Comparable method

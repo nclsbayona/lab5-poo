@@ -4,8 +4,7 @@ import poo.lab5.Controller.*;
 public class PantallaGaleria 
 {
     private ControllerLibro controlLibro=new ControllerLibro();
-    private ControllerAutor controlAutor = new ControllerAutor();
-
+    private ControllerAutor controlAutor=new ControllerAutor();
     public static void main(String args[]) {
         PantallaGaleria Galeria = new PantallaGaleria();
         Autor autores[] = new Autor[3];
@@ -17,11 +16,10 @@ public class PantallaGaleria
         Galeria.controlAutor.agregarAutor(autores[1]);
         Galeria.controlLibro.agregarLibro(libro1);
         Galeria.controlAutor.agregarLibroAAutor(libro1, autores[0]);
-        for (Autor autor : Galeria.controlAutor.getListaAutores())
+        for (Autor autor : ControllerAutor.getListaAutores())
         {
             System.out.println(autor);
         }
-
     }
 }
 
