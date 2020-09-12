@@ -46,18 +46,16 @@ public class Autor implements Comparable<Autor>
     //Constructor
     public Autor(String _nombre, int _cedula)
     {
-        this.librosEscritos=null;
+        this.librosEscritos=new TreeSet<Libro>();
         this.nombre=_nombre;
         this.cedula=_cedula;
     }
     //Agregar libro escrito
     public void agregarLibroEscrito(Libro libro)
     {
-    	if (this.librosEscritos==null)
-    	{
-    		this.librosEscritos=new TreeSet<Libro>();   	
-    	}
+        //System.out.println("Tam 1:"+this.librosEscritos.size());
         this.librosEscritos.add(libro);
+        //System.out.println("Tam 2:"+this.librosEscritos.size());
     }
     //Comparable method
     @Override
@@ -84,11 +82,15 @@ public class Autor implements Comparable<Autor>
     @Override
     public String toString(){
         String retorno= this.nombre+':'+this.cedula+'-'+this.estado+"\nLibros\n";
+        //System.out.println("value :"+this.librosEscritos);
         if (this.librosEscritos!=null)
         {
+            //System.out.println("Entra ");
+            //System.out.println("Tam 3:"+this.librosEscritos.size());
             for (Libro libro : this.librosEscritos)
             {
-                retorno+=libro.toString();
+                //System.out.println("Entra ");
+                retorno+=('\t'+libro.toString()+'\n');
             }
         }
         return retorno;

@@ -80,7 +80,8 @@ public class Libro implements Comparable<Libro> {
 
     @Override
     public String toString() {
-        return this.nombre + ':' + this.isbn + '-' + this.costo;
+        String retorno=this.nombre + '-' + this.isbn + '-' + this.costo;
+        //System.out.println("Retorno "+ retorno);
+        return retorno;
     }
-
 }

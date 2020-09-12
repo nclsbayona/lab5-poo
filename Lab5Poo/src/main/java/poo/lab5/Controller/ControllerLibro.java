@@ -5,14 +5,10 @@ import poo.lab5.Model.Autor;
 import java.util.TreeSet;
 
 public class ControllerLibro {
-    private static TreeSet<Libro> libros;
+    private static TreeSet<Libro> libros=new TreeSet<Libro>();
 
     // Métodos
     // Constructor
-    public ControllerLibro() {
-        ControllerLibro.libros = new TreeSet<Libro>();
-    }
-
     // Accessors de libros
     public static TreeSet<Libro> getLibros() {
         return ControllerLibro.libros;
