@@ -76,4 +76,8 @@ public class Autor implements Comparable<Autor>
             return 1;
         }
     }
+    @Override
+    public String toString(){
+        return this.nombre+':'+this.cedula+'-'+this.estado;
+    }
 }

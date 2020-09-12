@@ -1,4 +1,5 @@
 package poo.lab5.Controller;
+
 import poo.lab5.Model.Libro;
 import poo.lab5.Model.Autor;
 import java.util.TreeSet;
@@ -7,6 +8,11 @@ public class ControllerLibro {
     private static TreeSet<Libro> libros;
 
     // Métodos
+    // Constructor
+    public ControllerLibro() {
+        ControllerLibro.libros = new TreeSet<Libro>();
+    }
+
     // Accessors de libros
     public static TreeSet<Libro> getLibros() {
         return ControllerLibro.libros;
@@ -18,7 +24,7 @@ public class ControllerLibro {
 
     // Agregar Libro
     public void agregarLibro(Libro lib) {
-        for (Libro libro_ : ControllerLibro.libros) {
+        for (Libro libro_ : ControllerLibro.getLibros()) {
             if (lib.getIsbn() == libro_.getIsbn()) {
                 return;
             }
