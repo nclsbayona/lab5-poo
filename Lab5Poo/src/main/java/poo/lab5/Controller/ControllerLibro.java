@@ -32,8 +32,9 @@ public class ControllerLibro {
      */
     public static boolean agregarLibro(Libro lib, Autor aut) {
         boolean retorno = false;
-        if ((ControllerLibro.buscarLibro(lib.getIsbn()) == null)
-                && (ControllerAutor.buscarAutor(aut.getCedula()) != null)) {
+        Libro libro=ControllerLibro.buscarLibro(lib.getIsbn());
+        if ((libro!=null)&&(ControllerAutor.buscarAutor(aut.getCedula()) != null))
+        {
             ControllerLibro.getLibros().add(lib);
             ControllerAutor.getListaAutores().add(aut);
             aut.agregarLibroEscrito(lib);
@@ -78,6 +79,7 @@ public class ControllerLibro {
         Autor aut2=ControllerAutor.buscarAutor(aut.getCedula());
         if(aut2!=null){    
             aut2.agregarLibroEscrito(lib);
+            ControllerLibro.agregarLibro(lib);
         }
     }
 }

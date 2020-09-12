@@ -17,26 +17,32 @@ public class PantallaGaleria {
         Autor autores[] = new Autor[3];
         autores[0] = new Autor("Nicolas Bayona", 1000000);
         autores[1] = new Autor("Sebastian Herrera", 2000000);
-        Libro libro1[] = new Libro[4];
-        libro1[0] = new Libro("Doña barbara", "4EFG", 25000);
-        libro1[1] = new Libro("Siempre a tu lado", "4RSG", 50000);
-        libro1[2] = new Libro("Laia", "544F", 75000);
-        libro1[3] = new Libro("Inferno", "7JIO", 25000);
-        //autores[0].setEstado("ACTIVO");
+        Libro libros[] = new Libro[7];
+        libros[0] = new Libro("Doña barbara", "4EFG", 25000);
+        libros[1] = new Libro("Siempre a tu lado", "4TRG", 50000);
+        libros[2] = new Libro("Laia", "544F", 75000);
+        libros[3] = new Libro("Inferno", "7JIO", 25000);
+        libros[4] = new Libro("Miau", "8JKL", 5000);
+        libros[5] = new Libro("Land Dark", "4EFG", 50000);
+        libros[6] = new Libro("Andando por la calle", "4TRG", 50000);
         ControllerAutor.agregarAutor(autores[0]);
         autores[0].setEstado("ACTIVO");
         autores[1].setEstado("ACTIVO");
         ControllerAutor.agregarAutor(autores[1]);
-        ControllerLibro.agregarLibro(libro1[0]);
-        ControllerAutor.agregarLibroAAutor(libro1[0], autores[0]);
-        ControllerLibro.agregarLibro(libro1[1]);
-        ControllerAutor.agregarLibroAAutor(libro1[1], autores[0]);
-        ControllerLibro.asignarAutorALibro(libro1[2], autores[1]);
+        ControllerLibro.agregarLibro(libros[0]);
+        ControllerLibro.agregarLibro(libros[5]);
+        ControllerLibro.agregarLibro(libros[4], new Autor("AtonCode", 1122334));
+        ControllerLibro.agregarLibro(libros[6], autores[0]);
+        ControllerAutor.agregarLibroAAutor(libros[0], autores[0]);
+        ControllerAutor.agregarLibroAAutor(new Libro("Bananas en pijama", "2AVC", 10000), autores[0]);
+        ControllerLibro.agregarLibro(libros[1]);
+        ControllerLibro.agregarLibro(libros[4]);
+        ControllerAutor.agregarLibroAAutor(libros[1], autores[0]);
+        ControllerLibro.asignarAutorALibro(libros[2], autores[1]);
         System.out.print("Buscando \"4RSG\"" + '\n' + "Este se llama: ");
-        Libro aux = ControllerLibro.buscarLibro(libro1[1].getIsbn());
+        Libro aux = ControllerLibro.buscarLibro(libros[1].getIsbn());
         System.out.println(aux.getNombre());
-        //ControllerLibro.agregarLibro(libro1[2]);
-        ControllerLibro.agregarLibro(libro1[3], autores[1]);
+        ControllerLibro.agregarLibro(libros[3], autores[1]);
         for (Autor autor : ControllerAutor.getListaAutores()) {
             System.out.println("Autor: "+autor+"Total de costo de sus libros: "+ControllerAutor.calcularCostoTotalLibros(autor.getCedula())); System.out.println(); 
             for (Libro lib :autor.getLibrosEscritos()) {
@@ -44,12 +50,24 @@ public class PantallaGaleria {
             } 
             System.out.println();
         }
+        System.out.println("\n\tCOLECCION DE LIBROS");
+        System.out.println(ControllerLibro.getLibros());
     }
 }
 /**
- * Task Controlador Libro AgregarLibro(Libro lib) -> CHECK 
+ * Tasks
+ * 
+ * CONTROLADOR LIBRO 
+ * AgregarLibro(Libro lib) -> CHECK 
  * AgregarLibro(Libro lib, Autor aut): -> CHECK
- * AsignarAutorALibro(Libro lib, Autor a)-> No
+ * AsignarAutorALibro(Libro lib, Autor a)-> CHECK
  * BuscarLibro(String  _isbn) -> CHECK
- * CalcularCostoTotalLibros(): -> Check
- */
+ * CalcularCostoTotalLibros(): -> CHECK
+ *
+ * 
+ * CONTROLADOR AUTOR
+ * agregarAutor(Autor aut) -> Check
+ * agregarLibroAAutor(Libro lib, Autor aut) -> Check
+ * calcularCostoTotalLibros(int p_cedula) -> Check
+ * buscarAutor(int p_cedula): Buscar y retornar el autor cuya cédula llega como parámetro -> Check.
+*/

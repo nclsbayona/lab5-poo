@@ -31,6 +31,9 @@ public class ControllerAutor {
 
     // Agregar libro a autor
     public static void agregarLibroAAutor(Libro lib, Autor aut) {
+        if (!ControllerLibro.getLibros().contains(lib)){
+            return;
+        }
         Autor aut2 = ControllerAutor.buscarAutor(aut.getCedula());
         if (aut2 != null) {
             aut2.agregarLibroEscrito(lib);

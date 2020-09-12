@@ -87,13 +87,10 @@ public class Autor implements Comparable<Autor> {
     @Override
     public String toString() {
         String retorno = this.nombre + ':' + this.cedula + '-' + this.estado + "\nLibros\n";
-        // System.out.println("value :"+this.librosEscritos);
         if (this.librosEscritos != null) {
-            // System.out.println("Entra ");
-            // System.out.println("Tam 3:"+this.librosEscritos.size());
             for (Libro libro : this.librosEscritos) {
-                // System.out.println("Entra ");
                 retorno += ('\t' + libro.toString() + '\n');
+          
             }
         }
         return retorno;
