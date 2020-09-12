@@ -1,5 +1,7 @@
 package poo.lab5.Model;
+
 import java.util.TreeSet;
+
 public class Libro implements Comparable<Libro> {
     private TreeSet<Autor> autores;
     private String nombre;
@@ -64,9 +66,9 @@ public class Libro implements Comparable<Libro> {
 
     // Constructor
     public Libro(Autor _autor, String _nombrelibro, String _isbn, int _costo) {
-        this.autores=new TreeSet<Autor>();
+        this.autores = new TreeSet<Autor>();
         this.autores.add(_autor);
-         
+
         if (!_autor.getLibrosEscritos().contains(this)) {
             _autor.agregarLibroEscrito(this);
         }
@@ -76,15 +78,15 @@ public class Libro implements Comparable<Libro> {
     }
 
     public Libro(String _nombrelibro, String _isbn, int _costo) {
-        this.autores=new TreeSet<Autor>();
+        this.autores = new TreeSet<Autor>();
         this.nombre = _nombrelibro;
         this.isbn = _isbn;
         this.costo = _costo;
     }
 
     public String toString() {
-        String retorno=this.nombre + '-' + this.isbn + '-' + this.costo;
-        //System.out.println("Retorno "+ retorno);
+        String retorno = this.nombre + '-' + this.isbn + '-' + this.costo;
+        // System.out.println("Retorno "+ retorno);
         return retorno;
     }
 }

@@ -56,7 +56,13 @@ public class ControllerAutor {
         }
         return total;
     }
-
+    // Multi-libros a autor
+    public static void agregarAutores(Autor aut, Libro... libros) {
+        for (Libro libro : libros) {
+            ControllerAutor.agregarLibroAAutor(libro, aut);
+            aut.agregarLibroEscrito(libro);
+        }
+    }
     // buscarAutor(int p_cedula) Buscar y retornar el autor cuya cédula llega como
     // parámetro
     public static Autor buscarAutor(int p_cedula) {

@@ -1,8 +1,6 @@
 package poo.lab5.View;
-
 import poo.lab5.Controller.*;
 import poo.lab5.Model.*;
-
 public class PantallaGaleria {
     private ControllerLibro controlLibro;
     private ControllerAutor controlAutor;
@@ -34,6 +32,7 @@ public class PantallaGaleria {
         ControllerLibro.agregarLibro(libros[4], new Autor("AtonCode", 1122334));
         ControllerLibro.agregarLibro(libros[1], autores[0]);
         ControllerAutor.agregarLibroAAutor(libros[0], autores[0]);
+        ControllerAutor.agregarAutores(autores[0], libros[2], libros[3], libros[4]);
         ControllerAutor.agregarLibroAAutor(new Libro("Bananas en pijama", "2AVC", 10000), autores[0]);
         ControllerLibro.agregarLibro(libros[6]);
         ControllerLibro.agregarLibro(libros[6], autores[0]);

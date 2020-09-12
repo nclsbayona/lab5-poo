@@ -24,6 +24,23 @@ public class ControllerLibro {
             ControllerLibro.libros.add(lib);
         }
     }
+    public static void agregarAutoraListBook(Libro libro, Autor aut) {
+        Libro lib = ControllerLibro.buscarLibro(libro.getIsbn());
+        if (lib == null) {
+            return;
+        }
+        lib.getAutores().add(aut);
+
+    }
+    // Multi-autores a libro
+    public void agregarAutores(Libro lib, Autor... autores) {
+        for (Autor autor : autores) {
+            ControllerLibro.agregarAutoraListBook(lib, autor);
+            autor.agregarLibroEscrito(lib);
+        }
+    }
+
+    
 
     /*
      * agregarLibro(Libro lib, Autor aut): Agrega un libro nuevo con un autor aut No
@@ -33,16 +50,15 @@ public class ControllerLibro {
     public static boolean agregarLibro(Libro lib, Autor aut) {
         boolean retorno = false;
         Libro _libro = ControllerLibro.buscarLibro(lib.getIsbn());
-        if (_libro!=null) {
-           return retorno;
+        if (_libro != null) {
+            return retorno;
         }
-        if ((ControllerAutor.buscarAutor(aut.getCedula())!=null))
-        {
+        if ((ControllerAutor.buscarAutor(aut.getCedula()) != null)) {
             ControllerLibro.getLibros().add(lib);
             ControllerAutor.getListaAutores().add(aut);
             aut.agregarLibroEscrito(lib);
             retorno = true;
-            
+
             return retorno;
         }
         return retorno;
@@ -72,14 +88,15 @@ public class ControllerLibro {
         }
         return total;
     }
+
     /**
-     * asignarAutorALibro(Libro lib, Autor a): Asigna a un libro que debería existir a un autor que debe existir
-     *  El autor debe existir en la lista de autores
-     *  No se pueden asignar a los libros autores que tengan estado = ‘INACTIVO’ 
+     * asignarAutorALibro(Libro lib, Autor a): Asigna a un libro que debería existir
+     * a un autor que debe existir El autor debe existir en la lista de autores No
+     * se pueden asignar a los libros autores que tengan estado = ‘INACTIVO’
      */
     public static void asignarAutorALibro(Libro lib, Autor aut) {
-        Autor aut2=ControllerAutor.buscarAutor(aut.getCedula());
-        if(aut2!=null){    
+        Autor aut2 = ControllerAutor.buscarAutor(aut.getCedula());
+        if (aut2 != null) {
             aut2.agregarLibroEscrito(lib);
             ControllerLibro.agregarLibro(lib);
         }
