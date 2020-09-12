@@ -6,6 +6,7 @@
         "Libros",
         "asignar",
         "buscar",
-        "calcular"
+        "calcular",
+        "verificar"
     ]
 }

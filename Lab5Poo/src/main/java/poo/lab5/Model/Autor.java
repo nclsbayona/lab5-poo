@@ -1,6 +1,6 @@
 package poo.lab5.Model;
 import java.util.TreeSet;
-public class Autor 
+public class Autor implements Comparable<Autor>
 {
     private TreeSet<Libro> librosEscritos;
     private String nombre;
@@ -53,5 +53,27 @@ public class Autor
     public void agregarLibroEscrito(Libro libro)
     {
         this.librosEscritos.add(libro);
+    }
+    //Comparable method
+    @Override
+    public int compareTo(Autor otro)
+    {
+        /*
+            Devuelve 0 en caso de que ambos objetos tengan el mismo orden (no haya uno mayor que otro)
+            Un número entero negativo si el objeto actual es menor al objeto pasado como parámetro
+            Un número positivo si el objeto actual es mayor al objeto pasado como parámetro
+        */ 
+        if (this.cedula==otro.cedula)
+        {
+            return 0;
+        }
+        else if (this.cedula<otro.cedula)
+        {
+            return -1;
+        }
+        else
+        {
+            return 1;
+        }
     }
 }
