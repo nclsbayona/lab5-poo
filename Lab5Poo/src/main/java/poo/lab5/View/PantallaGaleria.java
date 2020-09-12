@@ -29,8 +29,14 @@ public class PantallaGaleria {
         for (Autor autor : ControllerAutor.getListaAutores())
         {
             
-            System.out.println(autor+ "Total de costo de sus libros: "+ControllerAutor.calcularCostoTotalLibros(autor.getCedula()));
-            
+            System.out.println("Autor: "+autor+ "Total de costo de sus libros: "+ControllerAutor.calcularCostoTotalLibros(autor.getCedula()));
+            System.out.println();
+            for (Libro lib : autor.getLibrosEscritos())
+            {
+                System.out.println("Libro: "+lib.getNombre()+'-'+lib.getAutor());
+            }
+            System.out.println();
+                        
         }
     }
 }

@@ -55,6 +55,7 @@ public class Autor implements Comparable<Autor>
     {
         //System.out.println("Tam 1:"+this.librosEscritos.size());
         this.librosEscritos.add(libro);
+        libro.setAutor(this);
         //System.out.println("Tam 2:"+this.librosEscritos.size());
     }
     //Comparable method
