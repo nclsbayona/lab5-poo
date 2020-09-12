@@ -30,14 +30,15 @@ public class ControllerLibro {
      * pueden existir dos libros con el mismo isbn El autor debe existir en la lista
      * de autores
      */
-    public boolean agregarLibro(Libro lib, Autor aut) {
+    public static boolean agregarLibro(Libro lib, Autor aut) {
         boolean retorno = false;
         if ((ControllerLibro.buscarLibro(lib.getIsbn()) == null)
                 && (ControllerAutor.buscarAutor(aut.getCedula()) != null)) {
             ControllerLibro.getLibros().add(lib);
             ControllerAutor.getListaAutores().add(aut);
+            aut.agregarLibroEscrito(lib);
             retorno = true;
-            // System.out.println(retorno);
+            
             return retorno;
         }
         return retorno;
@@ -67,5 +68,16 @@ public class ControllerLibro {
             total += libro.getCosto();
         }
         return total;
+    }
+    /**
+     * asignarAutorALibro(Libro lib, Autor a): Asigna a un libro que debería existir a un autor que debe existir
+     *  El autor debe existir en la lista de autores
+     *  No se pueden asignar a los libros autores que tengan estado = ‘INACTIVO’ 
+     */
+    public static void asignarAutorALibro(Libro lib, Autor aut) {
+        Autor aut2=ControllerAutor.buscarAutor(aut.getCedula());
+        if(aut2!=null){    
+            aut2.agregarLibroEscrito(lib);
+        }
     }
 }
