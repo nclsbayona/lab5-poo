@@ -14,19 +14,23 @@ public class PantallaGaleria {
         // PantallaGaleria galeria = new PantallaGaleria();
         Autor autores[] = new Autor[3];
         autores[0] = new Autor("Nicolas Bayona", 1000000);
-        autores[1] = new Autor("Sebastian Herrera", 2000000);
-        Libro libros[] = new Libro[7];
+        autores[1] = new Autor("Sebastian Herrera", 5100000);
+        Libro libros[] = new Libro[8];
         libros[0] = new Libro("Doña barbara", "4EFG", 25000);
         libros[1] = new Libro("Siempre a tu lado", "4TRG", 50000);
         libros[2] = new Libro("Laia", "544F", 75000);
         libros[3] = new Libro("Inferno", "7JIO", 25000);
         libros[4] = new Libro("Miau", "8JKL", 5000);
-        libros[5] = new Libro("Land Dark", "4EFG", 50000);
-        libros[6] = new Libro("Andando por la calle", "4TRG", 50000);
+        libros[5] = new Libro("Land Dark", "47FG", 50000);
+        libros[6] = new Libro("Andando por la calle", "4T0G", 50000);
+        libros[7] = new Libro("Callejera", "12KG", 20000);
         ControllerAutor.agregarAutor(autores[0]);
         autores[0].setEstado("ACTIVO");
         autores[1].setEstado("ACTIVO");
-        ControllerLibro.agregarAutores(libros[4], autores[0], autores[1]);
+        ControllerLibro.agregarLibro(libros[6]);
+        ControllerLibro.agregarLibro(libros[7]);
+        ControllerLibro.agregarAutores(libros[6], autores[1], autores[0]);
+        ControllerLibro.agregarAutores(libros[7], autores[1], autores[0]);
         ControllerAutor.agregarAutor(autores[1]);
         ControllerLibro.agregarLibro(libros[0]);
         ControllerLibro.agregarLibro(libros[5]);
@@ -57,6 +61,7 @@ public class PantallaGaleria {
         }
         System.out.println("\n\tCOLECCION DE LIBROS");
         System.out.println(ControllerLibro.getLibros());
+        System.out.println(libros[6].getAutores());
     }
 }
 /**

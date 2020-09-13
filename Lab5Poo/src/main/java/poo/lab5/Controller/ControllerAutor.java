@@ -59,7 +59,6 @@ public class ControllerAutor {
     // Multi-libros a autor
     public static void agregarAutores(Autor aut, Libro... libros) {
         for (Libro libro : libros) {
-            ControllerAutor.agregarLibroAAutor(libro, aut);
             aut.agregarLibroEscrito(libro);
         }
     }
