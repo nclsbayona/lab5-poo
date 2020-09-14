@@ -77,8 +77,19 @@ public class Autor implements Comparable<Autor> {
         if (this.librosEscritos != null) {
             for (Libro libro : this.librosEscritos) {
                 retorno += ('\t' + libro.toString() + '\n');
+            
             }
         }
         return retorno;
+    }
+    public boolean equals(Autor autor)
+    {
+        try{
+            return this.cedula == autor.cedula ;
+        }
+        catch (Exception e)
+        {
+            return false;
+        } 
     }
 }

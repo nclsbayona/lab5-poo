@@ -5,11 +5,15 @@ import java.util.TreeSet;
 
 public class ControllerLibro {
 
-    private TreeSet<Libro> libros = new TreeSet<Libro>();
+    private TreeSet<Libro> libros ;
     private ControllerAutor controllerAutor;
 
     // Métodos
-    // Constructor
+    //Constructores
+    public ControllerLibro()
+    {
+        this.libros= new TreeSet<Libro>();
+    }
     // Accessors de libros
     public TreeSet<Libro> getLibros() {
         return this.libros;

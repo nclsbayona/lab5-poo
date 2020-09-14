@@ -1,14 +1,18 @@
 package Controller;
-
 import Model.*;
 import java.util.TreeSet;
 
 public class ControllerAutor {
 
-    private TreeSet<Autor> listaAutores = new TreeSet<Autor>();
+    private TreeSet<Autor> listaAutores;
     private ControllerLibro controllerLibro;
 
     // Métodos
+    //Constructores
+    public ControllerAutor()
+    {
+        this.listaAutores = new TreeSet<Autor>();
+    }
     // accesors de lista autores
     public TreeSet<Autor> getListaAutores() {
         return this.listaAutores;

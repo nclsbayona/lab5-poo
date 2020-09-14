@@ -1,4 +1,5 @@
 package Model;
+
 import java.util.TreeSet;
 
 public class Libro implements Comparable<Libro> {
@@ -55,9 +56,9 @@ public class Libro implements Comparable<Libro> {
          * objeto pasado como parámetro Un número positivo si el objeto actual es mayor
          * al objeto pasado como parámetro
          */
-        if (this.nombre.compareTo(otro.nombre)>0){
+        if (this.nombre.compareTo(otro.nombre) > 0) {
             return 1;
-        } else if (this.nombre.compareTo(otro.nombre)<0) {
+        } else if (this.nombre.compareTo(otro.nombre) < 0) {
             return -1;
         } else {
             return 0;
@@ -79,9 +80,18 @@ public class Libro implements Comparable<Libro> {
         this.isbn = _isbn;
         this.costo = _costo;
     }
+
     @Override
     public String toString() {
         String retorno = this.nombre + '-' + this.isbn + '-' + this.costo;
         return retorno;
+    }
+
+    public boolean equals(Libro lib) {
+        try {
+            return this.isbn.equals(lib.isbn);
+        } catch (Exception e) {
+            return false;
+        }
     }
 }
