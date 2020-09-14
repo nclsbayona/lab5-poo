@@ -6,6 +6,7 @@ import java.util.TreeSet;
 public class ControllerAutor {
 
     private TreeSet<Autor> listaAutores = new TreeSet<Autor>();
+    private ControllerLibro controllerLibro;
 
     // Métodos
     // accesors de lista autores
@@ -24,20 +25,19 @@ public class ControllerAutor {
         } else {
             System.out.println("No se agrego el Autor :" + aut.getNombre() + " CC: " + aut.getCedula()
                     + " ya se encuentra esa cedula en nuestro sistema");
+
         }
     }
 
-
-
     // Agregar libro a autor
-    public boolean agregarLibroAAutor(Libro lib, Autor aut, ControllerLibro cLibro) {
+    public boolean agregarLibroAAutor(Libro lib, Autor aut) {
         Autor autor;
         TreeSet<Libro> librosEscritos;
         autor = this.buscarAutor(aut.getCedula());
         if (autor != null && autor.getEstado().equals("ACTIVO")) {
             librosEscritos = autor.getLibrosEscritos();
             try {
-                if (cLibro.buscarLibro(lib.getIsbn())==null) {
+                if (this.controllerLibro.buscarLibro(lib.getIsbn()) == null) {
                     return false;
                 } else {
                     if (!librosEscritos.contains(lib)) {
@@ -87,6 +87,10 @@ public class ControllerAutor {
             }
         }
         return null;
+    }
+
+    public void setControllerLibro(ControllerLibro controllerLibro2) {
+        this.controllerLibro = controllerLibro2;
     }
 
 }

@@ -6,6 +6,7 @@ import java.util.TreeSet;
 public class ControllerLibro {
 
     private TreeSet<Libro> libros = new TreeSet<Libro>();
+    private ControllerAutor controllerAutor;
 
     // Métodos
     // Constructor
@@ -34,11 +35,11 @@ public class ControllerLibro {
         }
     }
 
-    public boolean agregarLibro(Libro lib, Autor aut, ControllerAutor controla) {
+    public boolean agregarLibro(Libro lib, Autor aut) {
         if (this.buscarLibro(lib.getIsbn()) == null) {
-            if (controla.buscarAutor(aut.getCedula()) != null) {
+            if (this.controllerAutor.buscarAutor(aut.getCedula()) != null) {
                 this.libros.add(lib);
-                this.asignarAutorALibro(lib, aut, controla);
+                this.asignarAutorALibro(lib, aut);
 
             } else {
                 return false;
@@ -47,13 +48,13 @@ public class ControllerLibro {
         return false;
     }
 
-    public void asignarAutorALibro(Libro lib, Autor aut, ControllerAutor controlautor) {
+    public void asignarAutorALibro(Libro lib, Autor aut) {
         Libro libro;
-        if (controlautor.buscarAutor(aut.getCedula()) != null && this.buscarLibro(lib.getIsbn()) != null) {
+        if (this.controllerAutor.buscarAutor(aut.getCedula()) != null && this.buscarLibro(lib.getIsbn()) != null) {
             try {
                 if (aut.getEstado().equals("ACTIVO")) {
                     libro = this.buscarLibro(lib.getIsbn());
-                    controlautor.buscarAutor(aut.getCedula()).getLibrosEscritos().add(lib);
+                    this.controllerAutor.buscarAutor(aut.getCedula()).getLibrosEscritos().add(lib);
                     libro.getAutores().add(aut);
                 } else {
                     System.out.println("El autor esta INACTIVO");
@@ -82,6 +83,10 @@ public class ControllerLibro {
         }
         return total;
     }
+
+	public void setControllerAutor(ControllerAutor controllerAutor2) {
+        this.controllerAutor=controllerAutor2;
+	}
 
     /**
      * asignarAutorALibro(Libro lib, Autor a): Asigna a un libro que debería existir
