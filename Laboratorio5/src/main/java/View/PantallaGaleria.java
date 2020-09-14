@@ -5,6 +5,7 @@ import Model.*;
 
 public class PantallaGaleria {
 
+
     public static void main(String args[]) {
         Autor aut = new Autor("Sebastian", 1000471976);
         Autor aut1 = new Autor("Rafael", 1000471976);
