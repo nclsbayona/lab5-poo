@@ -25,7 +25,7 @@ Para el siguiente diagrama UML
 ○ Se debe buscar el autor que llega como parámetro.
 ○ No se pueden agregar a un autor dos libros con el mismo isbn.
 ○ Al autor se le debe vincular el libro que llega como parámetro.
-    ■ En la lista de ‘librosEscritos’ sólo se pueden asignar libros de la lista de ‘libros’.
+    * En la lista de ‘librosEscritos’ sólo se pueden asignar libros de la lista de ‘libros’.
 
 ● calcularCostoTotalLibros(int p_cedula)
 ○ Calcular el costo total de los libros del autor cuya cédula llega como parámetro.
