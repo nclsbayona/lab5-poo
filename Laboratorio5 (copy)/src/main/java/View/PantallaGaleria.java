@@ -4,8 +4,8 @@ import Controller.*;
 import Model.*;
 
 public class PantallaGaleria {
-    private ControllerAutor controllerAutor;
-    private ControllerLibro controllerLibro;
+    private ControllerAutor controllerAutor=new ControllerAutor();
+    private ControllerLibro controllerLibro=new ControllerLibro();
 
     public static void main(String args[]) {
         PantallaGaleria galeria = new PantallaGaleria();
@@ -15,6 +15,7 @@ public class PantallaGaleria {
         Autor aut3 = new Autor("Salome", 1000500311);
         Autor aut4 = new Autor("Thiago", 1000500312);
 
+        System.out.println("Hola");
         galeria.controllerAutor.agregarAutor(aut);
         galeria.controllerAutor.agregarAutor(aut1);
         galeria.controllerAutor.agregarAutor(aut2);

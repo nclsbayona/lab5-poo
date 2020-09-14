@@ -5,7 +5,7 @@ import java.util.TreeSet;
 
 public class ControllerAutor {
 
-    private  TreeSet<Autor> listaAutores = new TreeSet<Autor>();
+    private TreeSet<Autor> listaAutores = new TreeSet<Autor>();
 
     // Métodos
     // accesors de lista autores
@@ -18,17 +18,17 @@ public class ControllerAutor {
     }
 
     // Agregar Autor
-    public  void agregarAutor(Autor aut) {
+    public void agregarAutor(Autor aut) {
         if (this.buscarAutor(aut.getCedula()) == null) {
             this.listaAutores.add(aut);
         } else {
-            System.out.println("No se agrego el Autor :" + aut.getNombre() + " CC: " + aut.getCedula() + " ya se encuentra esa cedula en nuestro sistema");
+            System.out.println("No se agrego el Autor :" + aut.getNombre() + " CC: " + aut.getCedula()
+                    + " ya se encuentra esa cedula en nuestro sistema");
         }
-
     }
 
     // Agregar libro a autor
-    public  boolean agregarLibroAAutor(Libro lib, Autor aut, ControllerLibro cLibro) {
+    public boolean agregarLibroAAutor(Libro lib, Autor aut, ControllerLibro cLibro) {
         Autor autor;
         TreeSet<Libro> librosEscritos;
         autor = this.buscarAutor(aut.getCedula());
@@ -54,10 +54,10 @@ public class ControllerAutor {
     }
 
     /**
-     * calcularCostoTotalLibros(int p_cedula) Calcular el costo total de los
-     * libros del autor cuya cédula llega como parámetro.
+     * calcularCostoTotalLibros(int p_cedula) Calcular el costo total de los libros
+     * del autor cuya cédula llega como parámetro.
      */
-    public  int calcularCostoTotalLibros(int p_cedula) {
+    public int calcularCostoTotalLibros(int p_cedula) {
         int total = 0;
         for (Autor autor : this.listaAutores) {
             if (autor.getCedula() == p_cedula) {
@@ -71,12 +71,10 @@ public class ControllerAutor {
     }
 
     // Multi-libros a autor
-    /*  public static void agregarAutores(Autor aut, Libro... libros) {
-        for (Libro libro : libros) {
-            ControllerAutor.agregarLibroAAutor(libro, aut);
-            aut.agregarLibroEscrito(libro);
-        }
-    }
+    /*
+     * public static void agregarAutores(Autor aut, Libro... libros) { for (Libro
+     * libro : libros) { ControllerAutor.agregarLibroAAutor(libro, aut);
+     * aut.agregarLibroEscrito(libro); } }
      */
     // buscarAutor(int p_cedula) Buscar y retornar el autor cuya cédula llega como
     // parámetro
