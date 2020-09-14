@@ -1,7 +1,5 @@
-# LABORATORIO 5 POO
+## LABORATORIO 5 POO
 Pontificia Universidad Javeriana
-Programación Orientada a Objetos
-Laboratorio ECB y Relaciones M a M 
 
 ## ENUNCIADO
 
@@ -9,11 +7,11 @@ Laboratorio ECB y Relaciones M a M
 
 ● Cree las clases y métodos mostrados en el siguiente diagrama de clases (no se muestran constructores ni accessors pero deben ser creados).
 
-## Reglas de Negocio:
+### Reglas de Negocio:
 
 ● Los posibles valores del estado del autor son ‘ACTIVO’, ‘INACTIVO’ 
 
-## Observaciones de métodos de ControllerAutor:
+### Observaciones de métodos de ControllerAutor:
 
 ● agregarAutor(Autor aut): Agrega un nuevo autor
 ○ No pueden existir dos autores con el mismo número de cédula
@@ -30,7 +28,7 @@ Laboratorio ECB y Relaciones M a M
 ● buscarAutor(int p_cedula)
 ○ Buscar y retornar el autor cuya cédula llega como parámetro.
 
-## Observaciones de métodos de ControllerLibro:
+### Observaciones de métodos de ControllerLibro:
 
 ● agregarLibro(Libro lib): Agrega un libro nuevo sin Autor.
 ○ No pueden existir dos libros con el mismo isbn
@@ -47,7 +45,7 @@ Laboratorio ECB y Relaciones M a M
 
 ● calcularCostoTotalLibros(): calcular el costo total de todos los libros existentes en el sistema.
 
-## Relación Muchos a muchos
+### Relación Muchos a muchos
 
 Modifique su aplicación para que un libro tenga muchos autores. Tenga en cuenta que:
 
@@ -55,14 +53,14 @@ Modifique su aplicación para que un libro tenga muchos autores. Tenga en cuenta
 
 ● Los controladores deben incluir los métodos que permitan vincular un libro a un conjunto de autores y viceversa
 
-## Adicionalmente se pide:
+### Adicionalmente se pide:
 ● En el método main( ) de la pantalla usted debe crear los objetos y las llamadas necesarias que permitan probar cada uno de los métodos de los dos controladores.
 
 ● Se deben probar en cada método todos los caminos (if..)
 
 ● Sobrecargue el método toString( ) de las clases Libro y Autor, para imprimir por pantalla de forma personalizada la información de los objetos instancias de estas clases.
 
-## Bono Adicional (+0.5 pts.) 😃  !!!
+### Bono Adicional (+0.5 pts.) 😃  !!!
 
 ● Modifique su aplicación para que realice la relación muchos a muchos entre libro y autor a través de una clase intermedia, como se explicó en clase.
 
