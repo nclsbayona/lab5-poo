@@ -1,3 +1,6 @@
+#                                                                           Pontificia Universidad Javeriana
+#                                                                           Programación Orientada a Objetos
+#                                                                           Laboratorio ECB y Relaciones M a M 
 # LABORATORIO 5 POO
 
 ● Cree tres paquetes: view (clase PantallaLibreria), controller (para las clases ControllerLibro y
