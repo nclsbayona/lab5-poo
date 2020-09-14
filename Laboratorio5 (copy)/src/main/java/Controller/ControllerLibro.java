@@ -50,10 +50,8 @@ public class ControllerLibro {
     }
 
     public void asignarAutorALibro(Libro lib, Autor aut, ControllerAutor controlautor) {
-        TreeSet<Autor> listaAutores;
-        listaAutores = controlautor.getListaAutores();
         Libro libro;
-        if (listaAutores.contains(aut) && this.libros.contains(lib)) {
+        if (controlautor.buscarAutor(aut.getCedula())!=null && this.buscarLibro(lib.getIsbn())!=null) {
             try {
                 if (aut.getEstado().equals("ACTIVO")) {
                     libro = this.buscarLibro(lib.getIsbn());

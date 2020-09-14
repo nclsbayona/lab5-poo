@@ -14,8 +14,6 @@ public class PantallaGaleria {
         Autor aut2 = new Autor("Lina", 1000500310);
         Autor aut3 = new Autor("Salome", 1000500311);
         Autor aut4 = new Autor("Thiago", 1000500312);
-
-        System.out.println("Hola");
         galeria.controllerAutor.agregarAutor(aut);
         galeria.controllerAutor.agregarAutor(aut1);
         galeria.controllerAutor.agregarAutor(aut2);
