@@ -2,6 +2,9 @@
 Pontificia Universidad Javeriana
 
 ## ENUNCIADO
+Para el siguiente diagrama UML
+
+![UML](https://ibb.co/m6Qgvj4)
 
 ● Cree tres paquetes: view (clase PantallaLibreria), controller (para las clases ControllerLibro y ControllerAutor) y model (para las clases Libro y Autor).
 
