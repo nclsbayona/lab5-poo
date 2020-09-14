@@ -35,10 +35,8 @@ public class ControllerLibro {
     }
 
     public boolean agregarLibro(Libro lib, Autor aut, ControllerAutor controla) {
-        TreeSet<Autor> listaAutores;
         if (this.buscarLibro(lib.getIsbn()) == null) {
-            listaAutores = controla.getListaAutores();
-            if (listaAutores.contains(aut)) {
+            if (controla.buscarAutor(aut.getCedula()) != null) {
                 this.libros.add(lib);
                 this.asignarAutorALibro(lib, aut, controla);
 
@@ -51,7 +49,7 @@ public class ControllerLibro {
 
     public void asignarAutorALibro(Libro lib, Autor aut, ControllerAutor controlautor) {
         Libro libro;
-        if (controlautor.buscarAutor(aut.getCedula())!=null && this.buscarLibro(lib.getIsbn())!=null) {
+        if (controlautor.buscarAutor(aut.getCedula()) != null && this.buscarLibro(lib.getIsbn()) != null) {
             try {
                 if (aut.getEstado().equals("ACTIVO")) {
                     libro = this.buscarLibro(lib.getIsbn());
