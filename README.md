@@ -1,6 +1,8 @@
 ## LABORATORIO 5 POO
 Pontificia Universidad Javeriana
 
+* La entrega del laboratorio consistirá de 1 archivos zip, con el proyecto de maven. No incluya la carpeta target. Este archivo contendrá el código fuente del proyecto Java realizado por el estudiante. 
+
 ## ENUNCIADO
 Para el siguiente diagrama UML
 
