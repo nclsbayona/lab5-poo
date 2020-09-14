@@ -27,6 +27,8 @@ public class ControllerAutor {
         }
     }
 
+
+
     // Agregar libro a autor
     public boolean agregarLibroAAutor(Libro lib, Autor aut, ControllerLibro cLibro) {
         Autor autor;
@@ -35,10 +37,10 @@ public class ControllerAutor {
         if (autor != null && autor.getEstado().equals("ACTIVO")) {
             librosEscritos = autor.getLibrosEscritos();
             try {
-                if (librosEscritos.contains(lib)) {
+                if (cLibro.buscarLibro(lib.getIsbn())==null) {
                     return false;
                 } else {
-                    if (cLibro.getLibros().contains(lib)) {
+                    if (!librosEscritos.contains(lib)) {
                         librosEscritos.add(lib);
                         autor.setLibrosEscritos(librosEscritos);
                         return true;
