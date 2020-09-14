@@ -32,7 +32,13 @@ public class ControllerAutor {
 
         }
     }
-
+	//Agregar varios libros a autor
+	public void agregarVariosLibrosAUnAutor(Autor aut, Libro... libros) {
+        for (Libro lib : libros) {
+            this.agregarLibroAAutor(lib, aut);
+        }
+        return;
+    }
     // Agregar libro a autor
     public boolean agregarLibroAAutor(Libro lib, Autor aut) {
         Autor autor;

@@ -5,15 +5,15 @@ import java.util.TreeSet;
 
 public class ControllerLibro {
 
-    private TreeSet<Libro> libros ;
+    private TreeSet<Libro> libros;
     private ControllerAutor controllerAutor;
 
     // Métodos
-    //Constructores
-    public ControllerLibro()
-    {
-        this.libros= new TreeSet<Libro>();
+    // Constructores
+    public ControllerLibro() {
+        this.libros = new TreeSet<Libro>();
     }
+
     // Accessors de libros
     public TreeSet<Libro> getLibros() {
         return this.libros;
@@ -40,7 +40,7 @@ public class ControllerLibro {
     }
 
     public boolean agregarLibro(Libro lib, Autor aut) {
-        if (this.buscarLibro(lib.getIsbn()) == null) {
+        if (this.buscarLibro(lib.getIsbn()) != null) {
             if (this.controllerAutor.buscarAutor(aut.getCedula()) != null) {
                 this.libros.add(lib);
                 this.asignarAutorALibro(lib, aut);
@@ -52,6 +52,12 @@ public class ControllerLibro {
         return false;
     }
 
+    public void agregarVariosAutoresAUnLibro(Libro lib, Autor... autor) {
+        for (Autor aut : autor) {
+            this.agregarLibro(lib, aut);
+        }
+        return;
+    }
     public void asignarAutorALibro(Libro lib, Autor aut) {
         Libro libro;
         if (this.controllerAutor.buscarAutor(aut.getCedula()) != null && this.buscarLibro(lib.getIsbn()) != null) {
