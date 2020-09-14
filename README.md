@@ -22,27 +22,39 @@ Para el siguiente diagrama UML
 ○ Cuando se cree el autor cree la lista de libros vacía
 
 ● agregarLibroAAutor(Libro lib, Autor aut): Agrega un Libro que debe existir a un Autor que ya existe
+
 ○ Se debe buscar el autor que llega como parámetro.
+
 ○ No se pueden agregar a un autor dos libros con el mismo isbn.
+
 ○ Al autor se le debe vincular el libro que llega como parámetro.
+
     * En la lista de ‘librosEscritos’ sólo se pueden asignar libros de la lista de ‘libros’.
 
 ● calcularCostoTotalLibros(int p_cedula)
+
 ○ Calcular el costo total de los libros del autor cuya cédula llega como parámetro.
+
 ● buscarAutor(int p_cedula)
+
 ○ Buscar y retornar el autor cuya cédula llega como parámetro.
 
 ### Observaciones de métodos de ControllerLibro:
 
 ● agregarLibro(Libro lib): Agrega un libro nuevo sin Autor.
+
 ○ No pueden existir dos libros con el mismo isbn
 
 ● agregarLibro(Libro lib, Autor aut): Agrega un libro nuevo con un autor aut
+
 ○ No pueden existir dos libros con el mismo isbn
+
 ○ El autor debe existir en la lista de autores
 
 ● asignarAutorALibro(Libro lib, Autor a): Asigna a un libro que debería existir a un autor que debe existir
+
 ○ El autor debe existir en la lista de autores
+
 ○ No se pueden asignar a los libros autores que tengan estado = ‘INACTIVO’
 
 ● buscarLibro(String isbn): buscar y retorna un libro dado su isbn.
