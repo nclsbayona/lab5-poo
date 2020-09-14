@@ -5,7 +5,7 @@ La entrega del laboratorio consistirá de 1 archivos zip, con el proyecto de mav
 ## ENUNCIADO
 Para el siguiente diagrama UML
 
-![UML](https://ibb.co/m6Qgvj4/Screenshot-2020-09-14-154943)
+![UML](https://i.ibb.co/V2X5H1T/Screenshot-2020-09-14-154943.png)
 
 ● Cree tres paquetes: view (clase PantallaLibreria), controller (para las clases ControllerLibro y ControllerAutor) y model (para las clases Libro y Autor).
 
