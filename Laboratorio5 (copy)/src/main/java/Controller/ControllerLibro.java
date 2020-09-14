@@ -84,9 +84,9 @@ public class ControllerLibro {
         return total;
     }
 
-	public void setControllerAutor(ControllerAutor controllerAutor2) {
-        this.controllerAutor=controllerAutor2;
-	}
+    public void setControllerAutor(ControllerAutor controllerAutor2) {
+        this.controllerAutor = controllerAutor2;
+    }
 
     /**
      * asignarAutorALibro(Libro lib, Autor a): Asigna a un libro que debería existir

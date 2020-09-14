@@ -1,4 +1,5 @@
 package Model;
+
 import java.util.TreeSet;
 
 public class Autor implements Comparable<Autor> {
@@ -50,7 +51,7 @@ public class Autor implements Comparable<Autor> {
         this.librosEscritos = new TreeSet<Libro>();
         this.nombre = _nombre;
         this.cedula = _cedula;
-        this.estado="ACTIVO";
+        this.estado = "ACTIVO";
     }
 
     // Comparable method
