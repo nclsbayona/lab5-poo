@@ -1,17 +1,19 @@
-#                                                                           Pontificia Universidad Javeriana
-#                                                                           Programación Orientada a Objetos
-#                                                                           Laboratorio ECB y Relaciones M a M 
 # LABORATORIO 5 POO
+Pontificia Universidad Javeriana
+Programación Orientada a Objetos
+Laboratorio ECB y Relaciones M a M 
 
-● Cree tres paquetes: view (clase PantallaLibreria), controller (para las clases ControllerLibro y
-ControllerAutor) y model (para las clases Libro y Autor).
+# ENUNCIADO
+
+● Cree tres paquetes: view (clase PantallaLibreria), controller (para las clases ControllerLibro y ControllerAutor) y model (para las clases Libro y Autor).
 
 ● Cree las clases y métodos mostrados en el siguiente diagrama de clases (no se muestran constructores ni accessors pero deben ser creados).
 
-# Reglas de Negocio:
+## Reglas de Negocio:
 
-● Los posibles valores del estado del autor son ‘ACTIVO’, ‘INACTIVO’
-Observaciones de métodos de ControllerAutor:
+● Los posibles valores del estado del autor son ‘ACTIVO’, ‘INACTIVO’ 
+
+## Observaciones de métodos de ControllerAutor:
 
 ● agregarAutor(Autor aut): Agrega un nuevo autor
 ○ No pueden existir dos autores con el mismo número de cédula
@@ -21,12 +23,10 @@ Observaciones de métodos de ControllerAutor:
 ○ Se debe buscar el autor que llega como parámetro.
 ○ No se pueden agregar a un autor dos libros con el mismo isbn.
 ○ Al autor se le debe vincular el libro que llega como parámetro.
-
-■ En la lista de ‘librosEscritos’ sólo se pueden asignar libros de la lista de ‘libros’.
+    ■ En la lista de ‘librosEscritos’ sólo se pueden asignar libros de la lista de ‘libros’.
 
 ● calcularCostoTotalLibros(int p_cedula)
 ○ Calcular el costo total de los libros del autor cuya cédula llega como parámetro.
-
 ● buscarAutor(int p_cedula)
 ○ Buscar y retornar el autor cuya cédula llega como parámetro.
 
@@ -47,7 +47,7 @@ Observaciones de métodos de ControllerAutor:
 
 ● calcularCostoTotalLibros(): calcular el costo total de todos los libros existentes en el sistema.
 
-#Relación Muchos a muchos
+# Relación Muchos a muchos
 
 Modifique su aplicación para que un libro tenga muchos autores. Tenga en cuenta que:
 
@@ -63,6 +63,7 @@ Modifique su aplicación para que un libro tenga muchos autores. Tenga en cuenta
 ● Sobrecargue el método toString( ) de las clases Libro y Autor, para imprimir por pantalla de forma personalizada la información de los objetos instancias de estas clases.
 
 # Bono Adicional (+0.5 pts.) 😃  !!!
+
 ● Modifique su aplicación para que realice la relación muchos a muchos entre libro y autor a través de una clase intermedia, como se explicó en clase.
 
 ● Adicionalmente, sobrecargue el método equals() de las clases Libro y Autor para que se usen los datos de ISBN y cédula respectivamente como atributos que identifican a cada objeto y no se deben repetir. Con este cambio, los métodos agregar* pueden usar el método contains(…) de la colección para evitar repetidos
