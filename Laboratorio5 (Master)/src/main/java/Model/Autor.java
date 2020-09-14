@@ -71,7 +71,7 @@ public class Autor implements Comparable<Autor> {
             return 1;
         }
     }
-
+    @Override
     public String toString() {
         String retorno = this.nombre + ':' + this.cedula + '-' + this.estado + "\nLibros\n";
         if (this.librosEscritos != null) {

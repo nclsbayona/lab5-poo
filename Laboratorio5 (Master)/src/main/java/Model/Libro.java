@@ -79,7 +79,7 @@ public class Libro implements Comparable<Libro> {
         this.isbn = _isbn;
         this.costo = _costo;
     }
-
+    @Override
     public String toString() {
         String retorno = this.nombre + '-' + this.isbn + '-' + this.costo;
         return retorno;

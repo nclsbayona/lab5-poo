@@ -3,24 +3,24 @@ package View;
 import Controller.*;
 import Model.*;
 
-public class PantallaGaleria {
+public class PantallaLibreria {
     private ControllerAutor controllerAutor = new ControllerAutor();
     private ControllerLibro controllerLibro = new ControllerLibro();
 
     public static void main(String args[]) {
-        PantallaGaleria galeria = new PantallaGaleria();
-        galeria.controllerLibro.setControllerAutor(galeria.controllerAutor);
-        galeria.controllerAutor.setControllerLibro(galeria.controllerLibro);
+        PantallaLibreria libreria=new PantallaLibreria();
+        libreria.controllerLibro.setControllerAutor(libreria.controllerAutor);
+        libreria.controllerAutor.setControllerLibro(libreria.controllerLibro);
         Autor aut = new Autor("Sebastian", 1000471976);
         Autor aut1 = new Autor("Rafael", 1000471976);
         Autor aut2 = new Autor("Lina", 1000500310);
         Autor aut3 = new Autor("Salome", 1000500311);
         Autor aut4 = new Autor("Thiago", 1000500312);
-        galeria.controllerAutor.agregarAutor(aut);
-        galeria.controllerAutor.agregarAutor(aut1);
-        galeria.controllerAutor.agregarAutor(aut2);
-        galeria.controllerAutor.agregarAutor(aut3);
-        galeria.controllerAutor.agregarAutor(aut4);
+        libreria.controllerAutor.agregarAutor(aut);
+        libreria.controllerAutor.agregarAutor(aut1);
+        libreria.controllerAutor.agregarAutor(aut2);
+        libreria.controllerAutor.agregarAutor(aut3);
+        libreria.controllerAutor.agregarAutor(aut4);
 
         Libro libro1 = new Libro("Geek", "4ABC", 500);
         Libro libro2 = new Libro("Laia", "5FGH", 700);
@@ -30,39 +30,39 @@ public class PantallaGaleria {
         Libro libro6 = new Libro("Nuevo", "DDEF", 200);
         Libro libro7 = new Libro("Libro no agregado", "IDDF", 200);
         // Libro 7 no se agrega a la lista
-        galeria.controllerLibro.asignarAutorALibro(libro7, aut);
+        libreria.controllerLibro.asignarAutorALibro(libro7, aut);
         System.out.print("Agregando libro(NO ESTA EN LA LISTA) a autor desde el CONTROLLERAUTOR:"
-                + galeria.controllerAutor.agregarLibroAAutor(libro7, aut));
-        galeria.controllerLibro.agregarLibro(libro1);
-        galeria.controllerLibro.agregarLibro(libro2);
-        galeria.controllerLibro.agregarLibro(libro3);
-        galeria.controllerLibro.agregarLibro(libro4);
+                + libreria.controllerAutor.agregarLibroAAutor(libro7, aut));
+        libreria.controllerLibro.agregarLibro(libro1);
+        libreria.controllerLibro.agregarLibro(libro2);
+        libreria.controllerLibro.agregarLibro(libro3);
+        libreria.controllerLibro.agregarLibro(libro4);
         // Autor único
-        galeria.controllerAutor.agregarLibroAAutor(libro4, aut);
+        libreria.controllerAutor.agregarLibroAAutor(libro4, aut);
 
         // Estado inactivo
         aut4.setEstado("INACTIVO");
-        galeria.controllerAutor.agregarLibroAAutor(libro2, aut4);
+        libreria.controllerAutor.agregarLibroAAutor(libro2, aut4);
         // Multiples autores
-        galeria.controllerAutor.agregarLibroAAutor(libro4, aut3);
-        galeria.controllerAutor.agregarLibroAAutor(libro1, aut);
-        galeria.controllerAutor.agregarLibroAAutor(libro1, aut2);
-        System.out.println("\nLibro repetido a un autor : " + galeria.controllerAutor.agregarLibroAAutor(libro1, aut2));
+        libreria.controllerAutor.agregarLibroAAutor(libro4, aut3);
+        libreria.controllerAutor.agregarLibroAAutor(libro1, aut);
+        libreria.controllerAutor.agregarLibroAAutor(libro1, aut2);
+        System.out.println("\nLibro repetido a un autor : " + libreria.controllerAutor.agregarLibroAAutor(libro1, aut2));
         // Agregar libro repetido a una lista
-        galeria.controllerLibro.agregarLibro(libro5);
+        libreria.controllerLibro.agregarLibro(libro5);
         // Agregar libro con autor
         System.out.println("\nAgregar libro a un autor que no se encuentra en la lista :"
-                + galeria.controllerLibro.agregarLibro(libro6, aut2));
+                + libreria.controllerLibro.agregarLibro(libro6, aut2));
         System.out.println("\nLista de autores\n");
-        for (Autor autor : galeria.controllerAutor.getListaAutores()) {
+        for (Autor autor : libreria.controllerAutor.getListaAutores()) {
             System.out.println(autor);
-            System.out.println("Total " + galeria.controllerAutor.calcularCostoTotalLibros(autor.getCedula()) + "\n");
+            System.out.println("Total " + libreria.controllerAutor.calcularCostoTotalLibros(autor.getCedula()) + "\n");
         }
-        System.out.println("\nLista de libros, TAM: " + galeria.controllerLibro.getLibros().size() + "\n");
-        for (Libro lib : galeria.controllerLibro.getLibros()) {
+        System.out.println("\nLista de libros, TAM: " + libreria.controllerLibro.getLibros().size() + "\n");
+        for (Libro lib : libreria.controllerLibro.getLibros()) {
             System.out.println("\t" + lib);
         }
-        System.out.println("\nTotal valor: " + galeria.controllerLibro.calcularCostoTotalLibros());
+        System.out.println("\nTotal valor: " + libreria.controllerLibro.calcularCostoTotalLibros());
     }
 }
 /**
